@@ -40,8 +40,8 @@ message GetFriendListResponse {
 }
 
 message GetFriendProfileCardRequest {
-  repeated string target_uids = 1;
-  repeated uint64 target_uins = 2;
+  repeated uint64 target_uins = 1;
+  repeated string target_uids = 2;
 }
 
 message GetFriendProfileCardResponse {
@@ -49,8 +49,8 @@ message GetFriendProfileCardResponse {
 }
 
 message GetStrangerProfileCardRequest {
-  repeated string target_uids = 1;
-  repeated uint64 target_uins = 2;
+  repeated uint64 target_uins = 1;
+  repeated string target_uids = 2;
 }
 
 message GetStrangerProfileCardResponse {
@@ -72,8 +72,8 @@ message SetProfileCardResponse {
 
 message IsBlackListUserRequest {
   oneof target {
-    string target_uid = 1;
-    uint64 target_uin = 2;
+    uint64 target_uin = 1;
+    string target_uid = 2;
   }
 }
 
@@ -83,8 +83,8 @@ message IsBlackListUserResponse {
 
 message VoteUserRequest {
   oneof target {
-    string target_uid = 1;
-    uint64 target_uin = 2;
+    uint64 target_uin = 1;
+    string target_uid = 2;
   }
   uint32 vote_count = 3;
 }

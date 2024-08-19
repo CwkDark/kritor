@@ -41,10 +41,10 @@ service GroupService {
 }
 
 message BanMemberRequest {
-  uint64 group_id = 1; // 群组ID
+  uint64 group_id = 1; // 群组 ID
   oneof target{
-    string target_uid = 2; // 被禁言目标uid
-    uint64 target_uin = 3; // 被禁言目标uin
+    uint64 target_uin = 2; // 被禁言目标 uin
+    string target_uid = 3; // 被禁言目标 uid
   }
   uint32 duration = 4; // 单位：秒
 }
@@ -56,8 +56,8 @@ message BanMemberResponse {
 message PokeMemberRequest {
   uint64 group_id = 1; // 群组ID
   oneof target{
-    string target_uid = 2; // 被戳一戳目标uid
-    uint64 target_uin = 3; // 被戳一戳目标uin
+    uint64 target_uin = 2; // 被戳一戳目标 uin
+    string target_uid = 3; // 被戳一戳目标 uid
   }
 }
 
@@ -67,10 +67,10 @@ message PokeMemberResponse {
 message KickMemberRequest {
   uint64 group_id = 1; // 群组ID
   oneof target{
-    string target_uid = 2; // 被踢出目标uid
-    uint64 target_uin = 3; // 被踢出目标uin
+    uint64 target_uin = 2; // 被踢出目标 uin
+    string target_uid = 3; // 被踢出目标 uid
   }
-  optional bool reject_add_request = 6; // 是否拒绝再次申请 默认false
+  optional bool reject_add_request = 6; // 是否拒绝再次申请 默认 false
   optional string kick_reason = 5; // 踢出原因，可选
 }
 
@@ -78,17 +78,17 @@ message KickMemberResponse {
 }
 
 message LeaveGroupRequest {
-  uint64 group_id = 1; // 群组ID
+  uint64 group_id = 1; // 群组 ID
 }
 
 message LeaveGroupResponse {
 }
 
 message ModifyMemberCardRequest {
-  uint64 group_id = 1; // 群组ID
+  uint64 group_id = 1; // 群组 ID
   oneof target{
-    string target_uid = 2; // 目标uid
-    uint64 target_uin = 3; // 目标uin
+    uint64 target_uin = 2; // 目标 uin
+    string target_uid = 3; // 目标 uid
   }
   string card = 4; // 新的群名片
 }
@@ -97,7 +97,7 @@ message ModifyMemberCardResponse {
 }
 
 message ModifyGroupNameRequest {
-  uint64 group_id = 1; // 群组ID
+  uint64 group_id = 1; // 群组 ID
   string group_name = 2; // 新的群名称
 }
 
@@ -105,7 +105,7 @@ message ModifyGroupNameResponse {
 }
 
 message ModifyGroupRemarkRequest {
-  uint64 group_id = 1; // 群组ID
+  uint64 group_id = 1; // 群组 ID
   string remark = 2; // 新的群备注
 }
 
@@ -113,10 +113,10 @@ message ModifyGroupRemarkResponse {
 }
 
 message SetGroupAdminRequest {
-  uint64 group_id = 1; // 群组ID
+  uint64 group_id = 1; // 群组 ID
   oneof target{
-    string target_uid = 2; // 目标uid
-    uint64 target_uin = 3; // 目标uin
+    uint64 target_uin = 2; // 目标 uin
+    string target_uid = 3; // 目标 uid
   }
   bool is_admin = 4; // 是否设置为管理员
 }
@@ -125,10 +125,10 @@ message SetGroupAdminResponse {
 }
 
 message SetGroupUniqueTitleRequest {
-  uint64 group_id = 1; // 群组ID
+  uint64 group_id = 1; // 群组 ID
   oneof target{
-    string target_uid = 2; // 目标uid
-    uint64 target_uin = 3; // 目标uin
+    uint64 target_uin = 2; // 目标 uin
+    string target_uid = 3; // 目标 uid
   }
   string unique_title = 4; // 新的群头衔
 }
@@ -137,7 +137,7 @@ message SetGroupUniqueTitleResponse {
 }
 
 message SetGroupWholeBanRequest {
-  uint64 group_id = 1; // 群组ID
+  uint64 group_id = 1; // 群组 ID
   bool is_ban = 2; // 是否全员禁言
 }
 
@@ -145,7 +145,7 @@ message SetGroupWholeBanResponse {
 }
 
 message GetGroupInfoRequest {
-  uint64 group_id = 1; // 群组ID
+  uint64 group_id = 1; // 群组 ID
 }
 
 message GetGroupInfoResponse {
@@ -161,10 +161,10 @@ message GetGroupListResponse {
 }
 
 message GetGroupMemberInfoRequest {
-  uint64 group_id = 1; // 群组ID
+  uint64 group_id = 1; // 群组 ID
   oneof target{
-    string target_uid = 2; // 获取目标uid
-    uint64 target_uin = 3; // 获取目标uin
+    uint64 target_uin = 2; // 获取目标 uin
+    string target_uid = 3; // 获取目标 uid
   }
   optional bool refresh = 4; // 是否刷新缓存
 }
@@ -174,7 +174,7 @@ message GetGroupMemberInfoResponse {
 }
 
 message GetGroupMemberListRequest {
-  uint64 group_id = 1; // 群组ID
+  uint64 group_id = 1; // 群组 ID
   optional bool refresh = 2; // 是否刷新缓存
 }
 
@@ -183,7 +183,7 @@ message GetGroupMemberListResponse {
 }
 
 message GetProhibitedUserListRequest {
-  uint64 group_id = 1; // 群组ID
+  uint64 group_id = 1; // 群组 ID
 }
 
 message GetProhibitedUserListResponse {
@@ -191,7 +191,7 @@ message GetProhibitedUserListResponse {
 }
 
 message GetRemainCountAtAllRequest {
-  uint64 group_id = 1; // 群组ID
+  uint64 group_id = 1; // 群组 ID
 }
 
 message GetRemainCountAtAllResponse {
@@ -221,15 +221,15 @@ message UploadGroupFileRequest {
   uint64 group_id = 1; // 群号
   string file = 2; // 本地文件绝对路径
   string name = 3; // 文件名称
-  optional string folder = 4; // 父目录ID 不提供则上传到根目录
+  optional string folder = 4; // 父目录 ID 不提供则上传到根目录
 }
 
 message UploadGroupFileResponse {
-  string file_id = 1; // 文件ID
-  string file_url = 2; // 文件URL
+  string file_id = 1; // 文件 ID
+  string file_url = 2; // 文件 URL
   optional string file_name = 3; // 文件名
   optional string file_size = 4; // 文件大小
-  optional string file_bizid = 5; // 文件bizid
-  optional string file_sha = 6; // 文件sha
-  optional string file_md5 = 7; // 文件md5
+  optional string file_bizid = 5; // 文件 bizid
+  optional string file_sha = 6; // 文件 sha
+  optional string file_md5 = 7; // 文件 md5
 }

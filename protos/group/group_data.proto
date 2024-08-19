@@ -38,14 +38,14 @@ message NotJoinedGroupInfo {
 }
 
 message ProhibitedUserInfo {
-  string uid = 1;
-  uint64 uin = 2;
+  uint64 uin = 1;
+  string uid = 2;
   uint64 prohibited_time = 3;
 }
 
 message GroupHonorInfo {
-  string uid = 1; // 荣誉成员uid
-  uint64 uin = 2; // 荣誉成员uin
+  uint64 uin = 1; // 荣誉成员uin
+  string uid = 2; // 荣誉成员uid
   string nick = 3; // 荣誉成员昵称
   string honor_name = 4; // 荣誉名称
   string avatar = 5; // 荣誉图标url
@@ -61,8 +61,8 @@ enum MemberRole {
 }
 
 message GroupMemberInfo {
-  string uid = 1;
-  uint64 uin = 2;
+  uint64 uin = 1;
+  string uid = 2;
   string nick = 3;
   uint32 age = 4;
   string unique_title = 5;
